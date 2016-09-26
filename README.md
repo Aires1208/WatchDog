@@ -1,2 +1,1 @@
-# WatchDog
-on call system
+watchdog

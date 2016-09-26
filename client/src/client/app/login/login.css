@@ -1,0 +1,107 @@
+div.login {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15%;
+}
+img.login-logo{
+  width: 100%;
+  height:100px;
+}
+
+.group-input {
+  position: relative;
+  line-height: 30px;
+  height: 30px;
+  padding: 0;
+  clear: both
+}
+.group-input-uloginregistertip {
+  position: relative;
+  line-height: 20px;
+  height: 20px;
+  text-align: center;
+  margin-top: 20px;
+  clear: both
+}
+.group-input-uloginregistertip .uloginregistertip {
+  position: relative;
+  line-height: 20px;
+  height: 20px;
+  color: red
+}
+
+.group-input .input-focus {
+  border: 1px solid #31c37c
+}
+md-card {
+  text-align: center;
+  width: 100%;
+  animation: fadein 1s;
+  -o-animation: fadein 1s;
+   /*Opera */
+  -moz-animation: fadein 1s;
+   /*Firefox */
+  -webkit-animation: fadein 1s;
+  /* Safari and Chrome */
+  /*max-width: 85%;*/
+}
+
+md-input {
+  display: block;
+}
+
+md-spinner {
+  width: 25px;
+  height: 25px;
+  margin: 20px auto 0 auto;
+}
+
+button {
+  display: block;
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

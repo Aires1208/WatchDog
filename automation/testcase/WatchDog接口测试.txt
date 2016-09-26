@@ -1,0 +1,6 @@
+*** Test Cases ***
+alarmEvent入库接口测试
+    log    OK
+
+查询当前所有告警接口测试
+    log    OK

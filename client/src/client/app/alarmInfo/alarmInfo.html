@@ -1,0 +1,190 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <ol class="breadcrumb">
+        <li>{{alarmType}}</li>
+        <li style="display: inline-block;">{{curType}}</li>
+        <li class="active">
+          <a data-toggle="modal" data-target="#myAddModal" class="btn btn-success btn-banner-oper">手动添加告警</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!-- /.row -->
+  <div class="row" *ngIf="hasAlarms">
+    <div class="col-lg-5 padding-r10">
+      <div class="row-query" >
+        <div>
+          <input type="text" class="form-control" placeholder="告警单号">
+        </div>
+        <div>
+          <input type="text" class="form-control" placeholder="所属应用">
+        </div>
+        <div>
+          <input type="text" class="form-control" placeholder="告警级别">
+        </div>
+        <div>
+          <button type="button" class="btn btn-default btn-alarm-query"><i class="fa fa-search" title="过滤"></i></button>
+        </div>
+      </div>
+
+      <div class="alarm-list" *ngFor="let alarmInfo of alarmsInfo">
+        <div class="alarm-query-item itemBorder">
+
+          <div class="list-item clearfix" (click)="clickalarmList(alarmInfo)">
+            <div class="warn-topLine">
+              <div class="pull-right warn-inline">
+                <label></label><span class="lastTimeTxt">{{alarmInfo.activeTime}}</span>
+              </div>
+            </div>
+            <div class="item-left">
+              <div class="activeAlarm" [ngSwitch]="alarmInfo.alarmLevel">告警级别:
+                <template ngSwitchCase="提醒">
+                    <button style="background-color: #42a8ef;font-size: 16px;color: black">提醒</button>
+                </template>
+                <template ngSwitchCase="通知">
+                    <button style="background-color: #EF7742;font-size: 16px;color: black">通知</button>
+                </template>
+                <template ngSwitchCase="严重">
+                    <button style="background-color: #FF3A3A;font-size: 16px;color: black">严重</button>
+                </template>
+                <template ngSwitchDefault>
+                    <button style="background-color: #FF3A3A;font-size: 16px;color: black">未知</button>
+                </template>
+              </div>
+              <div class="activeAlarm">告警单号: {{alarmInfo.alarmID}}</div>
+              <div class="activeAlarm">所属应用: {{alarmInfo.belongApp}}</div>
+              <div class="activeAlarm">告警状态: {{alarmInfo.alarmStatue}}</div>
+            </div>
+            <div class="item-right" [ngSwitch]="alarmInfo.alarmStatue">
+                <template ngSwitchCase="待处理">
+                  <a (click) ="dealAlarm('处理告警')"><i class="fa fa-fw fa-user grey" title="处理告警"
+                        data-toggle="modal" data-target="#myRecordingAlrmInfoModal"></i></a>
+                  <a><i class="fa fa-share-square-o grey"  title="转发告警" style="margin-left:3px;color: red;cursor:not-allowed;"></i></a>
+                  <a><i class="fa fa-check-square grey" title="关闭告警" style="color: red;cursor:not-allowed;"></i></a>
+                </template>
+                <template ngSwitchCase="处理中">
+                  <a><i class="fa fa-fw fa-user grey" title="处理告警" style="color: red;cursor:not-allowed;"></i></a>
+                  <a (click) ="dealAlarm('转发告警')"><i class="fa fa-share-square-o grey" title="转发告警" style="margin-left:3px;"
+                        data-toggle="modal" data-target="#myRecordingAlrmInfoModal"></i></a>
+                  <a (click) ="dealAlarm('关闭告警')"><i class="fa fa-check-square grey" title="关闭告警"
+                        data-toggle="modal" data-target="#myRecordingAlrmInfoModal"></i></a>
+                </template>
+                <template ngSwitchCase="已转交">
+                  <a ><i class="fa fa-fw fa-user grey" title="处理告警" style="color: red;cursor:not-allowed;"></i></a>
+                  <a><i class="fa fa-share-square-o grey" title="转发告警" style="margin-left:3px;color: red;cursor:not-allowed;"></i></a>
+                  <a><i class="fa fa-check-square grey" title="关闭告警" style="color: red;cursor:not-allowed;"></i></a>
+                </template>
+                <template ngSwitchCase="已关闭">
+                  <a><i class="fa fa-fw fa-user grey" title="处理告警" style="color: red;cursor:not-allowed;"></i></a>
+                  <a><i class="fa fa-share-square-o grey" title="转发告警" style="margin-left:3px;color: red;cursor:not-allowed;"></i></a>
+                  <a><i class="fa fa-check-square grey" title="关闭告警" style="color: red;cursor:not-allowed;"></i></a>
+                </template>
+                <template ngSwitchDefault>
+                  <p style="font-size: 12px;color:red">状态？</p>
+                </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="whitebg" style="min-height: 763px;">
+        <div class="escalation-wrap">
+          <p>告警对象</p>
+          <div class="escalation-list">
+            <div class="escalation-item">{{currentClickAlarmInfo.alarmObject}}</div>
+          </div>
+        </div>
+        <div class="escalation-wrap">
+          <p>告警内容</p>
+          <div class="escalation-list">
+            <div class="escalation-item">{{currentClickAlarmInfo.alarmContent}}</div>
+          </div>
+        </div>
+        <div class="escalation-wrap">
+          <p>主机 IP</p>
+          <div class="escalation-list">
+            <div class="escalation-item">{{currentClickAlarmInfo.hostIp}}</div>
+          </div>
+        </div>
+        <div class="escalation-wrap">
+          <p>当前处理人</p>
+          <div class="escalation-list">
+            <div class="escalation-item"><a><i class="fa fa-fw fa-user"></i>{{currentClickAlarmInfo.processingMember}}</a></div>
+            <span class="time pull-right">{{currentClickAlarmInfo.processingTime}}</span>
+          </div>
+        </div>
+        <div class="escalation-wrap">
+          <p>历史处理人</p>
+          <div class="escalation-list" *ngFor="let processingMember of currentClickAlarmInfo.historyProcessingMember">
+            <div class="escalation-item"><a><i class="fa fa-fw fa-user"></i>{{processingMember.processingMember}}</a></div>
+            <span class="time pull-right">{{processingMember.processingTime}}</span>
+          </div>
+        </div>
+        <div class="history-wrap">
+          <p>记录</p>
+          <div class="form-group clearfix">
+            <input type="text" class="form-control" placeholder="填写记录信息(0-100)" (keyup)="curentAlarmOnKey($event)" [value]="currentRecordingInfo">
+            <button class="modal-btn-confirm pull-right" (click)="currentAlarmRecordingInfo()">记录</button>
+            <button class="modal-btn-confirm pull-right" (click)="clearCurrentAlarmRecordingInfo()">清除</button>
+          </div>
+          <div class="historyList" *ngFor="let recordInfo of currentClickAlarmInfo.recording">
+            <div class="history-item"><span style="margin-right:20px;">{{recordInfo.recordingMember}}</span>
+              <span>{{recordInfo.recordingType}}，并记录：{{recordInfo.recordingContent}}</span>
+              <span class="time pull-right">{{recordInfo.recordingTime}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<div class="row">
+  <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">手动添加告警</h4>
+        </div>
+        <div class="modal-body">
+            11111111
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn-confirm" data-dismiss="modal">确定</button>
+          <button class="modal-btn-confirm" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="modal fade" id="myRecordingAlrmInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">记录信息 | {{clickButtonType}}</h4>
+          </div>
+          <div class="modal-body">
+
+              <label style="margin: 10px 10px;">接收人员: </label>
+              <input type="text" style="height:30px;width:250px;margin: 10px 10px;" placeholder="填写接收人" (keyup)="onReciveMemberKey($event)" [value]="reciveMember">
+              <input type="text" class="form-control" style="padding-top: 15px;" placeholder="填写记录信息(0-100)" (keyup)="onKey($event)" [value]="recordingInfo">
+              <button class="modal-btn-confirm pull-right" (click)="clearRecordingInfo()">清除</button>
+          </div>
+          <div class="modal-footer">
+            <button class="modal-btn-confirm" data-dismiss="modal" (click)="confirm(clickButtonType)">确定</button>
+            <button class="modal-btn-confirm" data-dismiss="modal" >关闭</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

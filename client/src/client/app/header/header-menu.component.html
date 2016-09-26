@@ -1,0 +1,59 @@
+<div class="header">
+    <div class="content" [class.centered]="isCentered">
+        <a class="logo"></a>
+        <div class="btn-group projects">
+          <a [ngClass]="{active: isOn[0], disabled: false}" (click)="myAlarmsActive(sidbarTypeArray[0])">告警</a>
+        </div>
+        <div class="btn-group projects">
+          <a [ngClass]="{active: isOn[1], disabled: false}" (click)="deployApp(sidbarTypeArray[1])">配置<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a (click)="deployApp(sidbarTypeArray[1])">应用</a></li>
+            <li><a (click)="personalCenter(sidbarTypeArray[2])">通知策略</a></li>
+            <li><a (click)="allocationStrategy(sidbarTypeArray[1])">分派策略</a></li>
+            <!--<li><a (click)="changeHeaderMenu(sidbarTypeArray[1])" routerLink="['/my/participated-project']">协作</a></li>-->
+            <li><a (click)="scheduling()">排班</a></li>
+          </ul>
+         </div>
+        <div class="btn-group projects">
+          <a [ngClass]="{active: isOn[2], disabled: false}" (click)="personalCenter(sidbarTypeArray[2])">团队<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a (click)="personalCenter(sidbarTypeArray[2])">个人中心</a></li>
+            <li><a (click)="teamUser(sidbarTypeArray[2])">团队用户</a></li>
+            <li><a (click)="authorize(sidbarTypeArray[2])">授权</a></li>
+          </ul>
+        </div>
+        <div class="btn-group projects">
+          <a [ngClass]="{active: isOn[3], disabled: false}"  (click)="overview(sidbarTypeArray[3])">分析<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a (click)="overview(sidbarTypeArray[3])">总览</a></li>
+            <li><a (click)="analysisApp(sidbarTypeArray[3])">应用</a></li>
+            <li><a (click)="analysisTeam(sidbarTypeArray[3])">团队</a></li>
+            <li><a (click)="analysisMember(sidbarTypeArray[3])">成员</a></li>
+            <li><a (click)="analysisNotice(sidbarTypeArray[3])">通知</a></li>
+          </ul>
+        </div>
+        <div class="btn-group projects">
+          <a [ngClass]="{active: isOn[4], disabled: false}" (click)="helpFile(sidbarTypeArray[4])">帮助<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a (click)="helpFile(sidbarTypeArray[4])">文档</a></li>
+            <li><a (click)="helpForum(sidbarTypeArray[4])">论坛</a></li>
+            <li><a (click)="noviceGuide(sidbarTypeArray[4])">新手导向</a></li>
+          </ul>
+        </div>
+        <div class="btn-group cur-user">
+            <a routerLink="['/my/created-project']">185*****919{{userName||userId}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a routerLink="['/my/created-project']">个人中心</a></li>
+                <li><a routerLink="['/my/participated-project']">通知策略</a></li>
+              <li><a routerLink="['/my/participated-project']">邀请成员</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="javascript:void();" (click)="logout()">退出登录</a></li>
+            </ul>
+        </div>
+        <div class="divider"></div>
+        <a class="alarm" href="javascript:;" tooltipPlacement="bottom" tooltip="暂无消息！"><img src="../../app/images/icon/menu-info.png" /></a>
+        <div class="divider"></div>
+        <!--<a class="creatProject" routerLink="['/projects','create']" tooltipPlacement="bottom" tooltip="创建项目"></a>-->
+        <!-- Single button -->
+    </div>
+</div>

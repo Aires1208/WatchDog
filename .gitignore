@@ -1,0 +1,11 @@
+*.class 
+*.jar 
+*.war 
+target/ 
+.idea/ 
+*.iml 
+*.db 
+.idea/
+target/
+watchdog.db
+watchdog.iml

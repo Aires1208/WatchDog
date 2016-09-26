@@ -1,0 +1,279 @@
+/*
+ * Base structure
+ */
+
+@font-face {
+    /* font-properties */
+
+    font-family: openSans;
+    src: url('../fonts/opensans.ttf');
+}
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+body {
+    min-width: 1200px;
+    font-family: openSans, "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #666;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+img {
+    padding: 0;
+    margin: 0;
+}
+
+a,
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+html {
+    padding-bottom: 20px;
+    min-height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+.tooltip {
+    font-family: inherit;
+}
+
+a {
+    color: #238ff9;
+}
+
+a:hover,
+a:focus,
+a.router-link-active {
+    color: rgba(35, 143, 249, 0.81);
+    text-decoration: none;
+}
+
+/* table css start */
+
+.zte-table {
+    clear: left;
+    margin-top: 14px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.zte-table thead th {
+    background-color: #eee;
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+    height: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.zte-table thead th:first-child {
+    border-left: none;
+}
+
+.zte-table tbody tr td {
+    background-color: #fff;
+    color: #666;
+    font-size: 12px;
+    text-align: left;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.zte-table tbody tr:nth-child(2n) td {
+    background-color: #f9f9f9;
+}
+
+.zte-table .zte-btn {
+    font-size: 12px;
+}
+/* button css start */
+
+.zte-btn {
+    line-height: 20px;
+    font-size: 14px;
+    color: #238ff9;
+    font-family: inherit;
+    border: 1px solid #b0c4de;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 4px;
+    min-width: 60px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.zte-btn a:hover {
+    color: #fff;
+}
+
+.zte-btn:hover,
+.zte-btn:hover a,
+.zte-btn.primary {
+    color: #fff;
+    background-color: #238ff9;
+    border: 1px solid #238ff9;
+}
+
+.zte-btn.no-primary:hover {
+    color: #238ff9;
+    background-color: #fff;
+    border: 1px solid #238ff9;
+}
+
+.create-btn {
+    text-align: center;
+    width: 120px;
+    color: #fff;
+    background-color: #5cb85c;
+    line-height: 30px;
+    border: none;
+}
+
+.create-btn > i {
+    margin-right: 5px;
+}
+
+a.create-btn:hover,
+a.create-btn:focus,
+a.create-btn:hover {
+    background-color: #449644;
+    border: none;
+    color: #fff;
+}
+/* tabs  */
+
+.zte-tabs {
+    background-color: #fff;
+    padding-bottom: 20px;
+    font-family: inherit;
+}
+
+.zte-tabs .tab-nav {
+    margin-top: 20px;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 10px;
+}
+
+.zte-tabs .tab-nav a {
+    float: left;
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    /* border-right: 1px solid #e5e5e5; */
+}
+
+.zte-tabs .tab-nav a.router-link-active,
+.zte-tabs .tab-nav a.active {
+    background-color: #fff;
+    border-top: 2px solid #238ff9;
+    line-height: 38px;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-radius: 3px;
+    color: #000;
+}
+
+.zte-tabs .tab-content {
+    margin-top: 20px;
+    min-height: 400px;
+}
+
+.page-location {
+    /*display: inline-block;*/
+
+    margin-bottom: 10px;
+}
+
+.tooltip-inner {
+    background-color: #2e3a46;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #2e3a46;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #2e3a46;
+}
+
+.page-head {
+    margin: 0 0 20px 0;
+    color: #333333;
+    font-size: 14px;
+}
+
+.page-head > .title {
+    line-height: 1em;
+    font-size: 24px;
+    color: #1e1e1e;
+}
+
+.page-head > .summary {
+    margin-top: 20px;
+}
+
+.section-head {
+    margin: 20px 0;
+    border-bottom: 2px solid #eee;
+}
+
+.section-head > .title {
+    font-size: 14px;
+    line-height: 2em;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    /* border-bottom: 2px solid #238ff9;*/
+
+    margin-bottom: -2px;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    font-size: 12px;
+    color: #ccc;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-size: 12px;
+    color: #ccc;
+}

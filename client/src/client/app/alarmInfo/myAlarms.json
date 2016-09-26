@@ -1,0 +1,119 @@
+{
+  "alarmsInfo":[
+    {
+      "alarmID": 11111,
+      "alarmObject": "alarmObject",
+      "alarmContent": "Shanghai Pudong Data-center",
+      "belongApp": "belongApp",
+      "hostIp":"10.62.100.76:8080/jenkins",
+      "alarmLevel": "提醒",
+      "alarmStatue": "待处理",
+      "activeTime": "2016-06-02T02:49:51.000000",
+      "processingMember":"乔木",
+      "processingTime": "2016-06-02T02:49:51.000000",
+      "historyProcessingMember":[
+        {
+          "processingMember":"陈立鹏",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        },
+        {
+          "processingMember":"乔木",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        }
+      ],
+      "recording":[
+        {
+          "recordingMember":"陈立鹏",
+          "recordingType":"已关闭报警",
+          "recordingContent":"1111111",
+          "recordingTime": "2016-06-02T02:49:51.000000"
+        }
+      ]
+    },
+    {
+      "alarmID": 11112,
+      "alarmObject": "alarmObject",
+      "alarmContent": "Shanghai Pudong Data-center",
+      "belongApp": "belongApp",
+      "hostIp":"10.62.100.76:8080/jenkins",
+      "alarmLevel": "提醒",
+      "alarmStatue": "处理中",
+      "activeTime": "2016-06-02T02:49:51.000000",
+      "processingMember":"乔木",
+      "processingTime": "2016-06-02T02:49:51.000000",
+      "historyProcessingMember":[
+        {
+          "processingMember":"陈立鹏",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        },
+        {
+          "processingMember":"乔木",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        }
+      ],
+      "recording":[
+        {
+          "recordingMember":"陈立鹏",
+          "recordingType":"已关闭报警",
+          "recordingContent":"1111111",
+          "recordingTime": "2016-06-02T02:49:51.000000"
+        }
+      ]
+    },
+    {
+      "alarmID": 11113,
+      "alarmObject": "alarmObject",
+      "alarmContent": "Shanghai Pudong Data-center",
+      "belongApp": "belongApp",
+      "hostIp":"10.62.100.76:8080/jenkins",
+      "alarmLevel": "通知",
+      "alarmStatue": "已转交",
+      "activeTime": "2016-06-02T02:49:51.000000",
+      "processingMember":"乔木",
+      "processingTime": "2016-06-02T02:49:51.000000",
+      "historyProcessingMember":[
+        {
+          "processingMember":"陈立鹏",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        }
+      ],
+      "recording":[
+        {
+          "recordingMember":"陈立鹏",
+          "recordingType":"已关闭报警",
+          "recordingContent":"1111111",
+          "recordingTime": "2016-06-02T02:49:51.000000"
+        }
+      ]
+    },
+    {
+      "alarmID": 11114,
+      "alarmObject": "alarmObject",
+      "alarmContent": "Shanghai Pudong Data-center",
+      "belongApp": "belongApp",
+      "hostIp":"10.62.100.76:8080/jenkins",
+      "alarmLevel": "严重",
+      "alarmStatue": "已关闭",
+      "activeTime": "2016-06-02T02:49:51.000000",
+      "processingMember":"乔木",
+      "processingTime": "2016-06-02T02:49:51.000000",
+      "historyProcessingMember":[
+        {
+          "processingMember":"陈立鹏",
+          "processingTime": "2016-06-02T02:49:51.000000"
+        }
+      ],
+      "recording":[
+        {
+          "recordingMember":"陈立鹏",
+          "recordingType":"已关闭报警",
+          "recordingContent":"1111111",
+          "recordingTime": "2016-06-02T02:49:51.000000"
+        }
+      ]
+    }
+  ]
+}
+
+
+

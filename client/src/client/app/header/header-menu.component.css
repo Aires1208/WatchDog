@@ -1,0 +1,114 @@
+
+.header {
+    height: 60px;
+    background-color: #f7f8fd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .content {
+    display: block;
+    min-width: 1180px;
+}
+
+.content>.divider {
+    float: right;
+    border-right: 1px solid #999;
+    height: 16px;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-color: #c0c0c0;
+}
+
+.logo,
+.projects,
+.alarm,
+.creatProject,
+.cur-user {
+    float: right;
+    width: 28px;
+    color: #666;
+    font-size: 13px;
+
+    cursor: pointer;
+    display: inline-block;
+
+    line-height: 60px;
+    height: 60px;
+}
+
+
+.logo{
+    float: left;
+    margin-left: 10px;
+    width: 190px;
+    background-image: url('../../app/images/watchdog_logo.png');
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+.projects a:hover{
+  border-bottom: 3px solid red;
+}
+.projects a.active {
+  border-bottom: 3px solid blue;
+}
+.projects a.disabled {
+  /*color: gray;*/
+  /*border: medium solid gray;*/
+}
+.projects,
+.cur-user {
+    width: initial;
+    margin-right: 15px;
+}
+
+.projects {
+    margin-left: 15px;
+    float: left;
+}
+
+.projects a,
+.cur-user a {
+    color: #666;
+    font-size: 15px;
+}
+
+.projects ul.dropdown-menu,
+.cur-user ul.dropdown-menu {
+    margin-top: 0px;
+}
+
+.cur-user ul.dropdown-menu {
+    margin-left: -80px;
+}
+
+.projects:hover ul.dropdown-menu,
+.cur-user:hover ul.dropdown-menu {
+    display: block;
+}
+
+.creatProject {
+    background-image: url('../../app/images/icon/menu-add.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.creatProject:hover {
+    background-image: url('../../app/images/icon/menu-add-hover.png');
+}
+
+.header .centered {
+    width: 1180px;
+    margin-left: -moz-calc((100% - 1180px)/2);
+    margin-left: -webkit-calc((100% - 1180px)/2);
+    margin-left: calc((100% - 1180px)/2);
+}
+.header .centered .projects {
+    margin-left: 30px;
+}

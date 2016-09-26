@@ -1,0 +1,53 @@
+<header-register></header-register>
+<div class="login">
+  <md-card>
+    <md-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit(null)" #loginForm="ngForm">
+        <img class="login-logo" src="../../app/images/watchdog_logo.png" alt="OpenPalette"/>
+        <div class="group-input" style="margin-top: 30px">
+          <md-input formControlName="userID" class="input required" [floatingPlaceholder]="floatingLabel"
+                    [placeholder]="floatingLabel ? 'Floating label' : '手机号码'">
+            <span md-prefix><i class="fa fa-user fa-2x" style="vertical-align:middle;text-align:center;color:Silver  ;border: 1px solid #e0e0e0;width:35px;" aria-hidden="true"></i></span>
+            <span md-suffix>
+                        <p style="width:80px;"></p>
+                    </span>
+          </md-input>
+        </div>
+        <div class="group-input">
+          <md-input formControlName="userPwd" class="input required" type="{{passwordInputType}}"
+                    [floatingPlaceholder]="floatingLabel" [placeholder]="floatingLabel ? 'Floating labe': '请输入密码'">
+            <span md-prefix><i class="fa fa-unlock-alt fa-2x" style="vertical-align:middle;text-align:center;color:Silver;border: 1px solid #e0e0e0;width:35px;" aria-hidden="true"></i></span>
+            <span md-suffix (click)="openOrCloseEyes()">
+                        <i *ngIf="!openEyes" class="fa fa-eye-slash" style="width:80px;text-align:right;" aria-hidden="true"></i>
+                        <i *ngIf="openEyes" class="fa fa-eye" style="width:80px;text-align:right;" aria-hidden="true"></i>
+                    </span>
+          </md-input>
+        </div>
+        <div class="group-input">
+          <md-input formControlName="userRePwd" class="input required" type="{{passwordInputType}}"
+                    [floatingPlaceholder]="floatingLabel" [placeholder]="floatingLabel ? 'Floating labe': '请重复输入密码'">
+            <span md-prefix><i class="fa fa-unlock-alt fa-2x" style="vertical-align:middle;text-align:center;color:Silver;border: 1px solid #e0e0e0;width:35px;" aria-hidden="true"></i></span>
+            <span md-suffix (click)="openOrCloseEyes()">
+                        <i *ngIf="!openEyes" class="fa fa-eye-slash" style="width:80px;text-align:right;" aria-hidden="true"></i>
+                        <i *ngIf="openEyes" class="fa fa-eye" style="width:80px;text-align:right;" aria-hidden="true"></i>
+                    </span>
+          </md-input>
+        </div>
+        <div class="group-input">
+        <md-input id="code" formControlName="validateCode" class="code-input required" type="text" maxlength="4"
+        [floatingPlaceholder]="floatingLabel" [placeholder]="floatingLabel ? 'Floating label' : '验证码'">
+        <span md-prefix><i class="fa fa-key fa-2x" style="vertical-align:middle;text-align:center;color:Silver;border: 1px solid #e0e0e0;width:35px;" aria-hidden="true"></i></span>
+        <span md-suffix>
+        <img id="img" align="middle" (click)="changeImg()" src="{{imagecodeUrl}}"/>
+        </span>
+        </md-input>
+        </div>
+        <div class="group-input-uloginregistertip">
+          <span class="uloginregistertip">{{errorDiagnostic}}</span>
+        </div>
+        <button type="submit" md-raised-button color="primary" *ngIf="!logining" [disabled]="!loginForm.form.valid">注&nbsp;&nbsp;&nbsp;册</button>
+        <button type="submit" md-raised-button color="primary" *ngIf="logining" [disabled]="logining">注&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;中</button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

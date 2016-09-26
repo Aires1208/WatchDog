@@ -1,0 +1,25 @@
+server:
+    port: 8080
+    contextPath:
+
+spring:
+    profiles:
+        active: dev
+
+    thymeleaf:
+        cache: false
+
+    jade4j:
+        caching: false
+
+jenkins:
+
+    ip: 10.62.100.76
+
+    port: 8080
+
+    context: jenkins
+
+sqlite:
+
+    dbPath: ""

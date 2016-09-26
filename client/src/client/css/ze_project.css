@@ -1,0 +1,83 @@
+.projectInfo {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.project {
+  font-size: 18px;
+  color: #333;
+}
+
+.project a {
+  color: #238ff9;
+  font-size: 16px;
+}
+
+.time {
+  font-size: 12px;
+  color: #999;
+}
+
+.contract {
+  font-size: 14px;
+  color: #666;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.ProjectOp {
+  float: right;
+  font-size: 16px;
+  color: #666;
+  margin-left: 20px;
+}
+
+.ProjectOp i {
+  color: #999;
+  font-size: 18px;
+}
+
+.ProjectOp:hover,
+.ProjectOp:hover i {
+  color: #238ff9;
+  cursor: pointer;
+}
+
+div.search {
+  float: right;
+  margin-right: -4px;
+  /*margin-top: 15px;*/
+  margin-bottom: 10px;
+}
+div.search:hover input{
+  border: 1px solid #6dc2ff;
+  font-size: 12px;
+  color: #333;
+}
+div.search i:hover{
+  color: #6dc2ff;
+  cursor: pointer;
+}
+.search input {
+  height: 30px;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding-left: 8px;
+  padding-right: 30px;
+  font-family: inherit;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.search i.fa-search {
+  font-size: 16px;
+  margin-left: -30px;
+  color: #999;
+}
+
+.dev-creat {
+  display: inline-block;
+  line-height: 30px;
+}

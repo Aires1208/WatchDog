@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+登陆测试
+    log    print
+
+告警-待处理界面
+    log    ok!
+
+告警-处理中界面
+    log    ok!
+
+告警-已关闭界面
+    log    ok!

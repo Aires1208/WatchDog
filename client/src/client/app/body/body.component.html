@@ -1,0 +1,117 @@
+<header-menu></header-menu>
+<div class="sideBar">
+  <div class="project">
+    <div class="icon">{{userName}}</div>
+    <div class="name">{{phoneNumber}}</div>
+  </div>
+  <ul class="menu" [ngSwitch]="_userService.headerSidbarType">
+    <template ngSwitchCase="alarm">
+      <li class="divider"></li>
+      <li><a routerLink="/body/myAlarms" routerLinkActive="active">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;我的告警
+        ({{myAlarms}})
+      </a></li>
+      <li class="divider"></li>
+      <li><a routerLink="/body/myAlarmsActive" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待处理
+        <span class="alarm_span">{{myAlarmsActive}}</span>
+      </a></li>
+      <li><a routerLink="/body/myAlarmsAck" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理中
+        <span class="alarm_span">{{myAlarmsAck}}</span>
+      </a></li>
+      <li><a routerLink="/body/myAlarmsForwarded" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已转交
+        <span class="alarm_span">{{myAlarmsForwarded}}</span>
+      </a></li>
+      <li><a routerLink="/body/myAlarmsClosed" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已关闭
+        <span class="alarm_span">{{myAlarmsClosed}}</span>
+      </a></li>
+      <li class="divider"></li>
+      <li><a routerLink="/body/allAlarms" routerLinkActive="active">
+        <i class="fa fa-fire" aria-hidden="true"></i>&nbsp;&nbsp;所有告警
+        ({{allAlarms}})
+      </a></li>
+      <li class="divider"></li>
+      <li><a routerLink="/body/allAlarmsActive" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待处理
+        <span class="alarm_span">{{allAlarmsActive}}</span>
+      </a></li>
+      <li><a  routerLink="/body/allAlarmsAck" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处理中
+        <span class="alarm_span">{{allAlarmsAck}}</span>
+      </a></li>
+      <li><a routerLink="/body/allAlarmsClosed" routerLinkActive="active">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已关闭
+        <span class="alarm_span">{{allAlarmsClosed}}</span>
+      </a></li>
+      <li class="divider"></li>
+    </template>
+    <template ngSwitchCase="app">
+      <li class="divider"></li>
+      <li><a  routerLink="/body/deployApp" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;应用
+      </a></li>
+      <!--<li><a routerLink="['dashboard']" routerLinkActive="active" class="dashboard">-->
+      <!--<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;协作-->
+      <!--</a></li>-->
+      <li><a  routerLink="/body/allocationStrategy" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;分派策略
+      </a></li>
+      <li><a  routerLink="/body/scheduling" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;排班
+      </a></li>
+      <li class="divider"></li>
+    </template>
+    <template ngSwitchCase="team">
+      <li class="divider"></li>
+      <li><a routerLink="/body/personalCenter" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;个人中心
+      </a></li>
+      <li><a routerLink="/body/teamUser" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;团队用户
+      </a></li>
+      <li><a routerLink="/body/authorize" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;授权
+      </a></li>
+    </template>
+    <template ngSwitchCase="analysis">
+      <li class="divider"></li>
+      <li><a  routerLink="/body/overview" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;总览
+      </a></li>
+      <li><a routerLink="/body/analysisApp" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;应用
+      </a></li>
+      <li><a routerLink="/body/analysisTeam" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;团队
+      </a></li>
+      <li><a routerLink="/body/analysisMember" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;成员
+      </a></li>
+      <li><a routerLink="/body/analysisNotice" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;通知查询
+      </a></li>
+    </template>
+    <template ngSwitchCase="help">
+      <li class="divider"></li>
+      <li><a routerLink="/body/helpFile" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;文档
+      </a></li>
+      <li><a routerLink="/body/helpForum" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;论坛
+      </a></li>
+      <li><a routerLink="/body/noviceGuide" routerLinkActive="active" class="dashboard">
+        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;新手向导
+      </a></li>
+    </template>
+    <template ngSwitchDefault>
+      加载失败
+    </template>
+  </ul>
+</div>
+<div class="mianContent">
+  <router-outlet></router-outlet>
+</div>
+
