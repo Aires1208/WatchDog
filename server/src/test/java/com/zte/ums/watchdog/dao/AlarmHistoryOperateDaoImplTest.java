@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by 10183966 on 9/22/16.
+ * Created by  on 9/22/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
