@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by 10172605 on 2016/9/20.
+ * Created by  on 2016/9/20.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
