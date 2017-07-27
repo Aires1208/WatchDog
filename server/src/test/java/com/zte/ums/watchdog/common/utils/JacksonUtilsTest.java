@@ -12,7 +12,7 @@ import static com.zte.ums.watchdog.model.Color.RED;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by 10172605 on 2016/9/21.
+ * Created by  on 2016/9/21.
  */
 public class JacksonUtilsTest {
     String response = "{\n" +
