@@ -18,7 +18,7 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
- * Created by 10172605 on 2016/9/23.
+ * Created by  on 2016/9/23.
  */
 @Repository
 public class MonitorAppDaoImpl implements MonitorAppDao {
