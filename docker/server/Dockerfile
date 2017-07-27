@@ -1,6 +1,6 @@
 FROM openjdk:8.0.72
 
-MAINTAINER "qianguodong" <qian.guodong5@zte.com.cn>
+MAINTAINER "abc" 
 
 ENV APP_RUN=/var/run/app
 
