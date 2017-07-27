@@ -1,7 +1,7 @@
 package com.zte.ums.watchdog.common.sms;
 
 /**
- * Created by 10183966 on 2016/9/21.
+ * Created by  on 2016/9/21.
  */
 
 import java.security.MessageDigest;
