@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * Created by 10172605 on 2016/9/23.
+ * Created by  on 2016/9/23.
  */
 @JsonSerialize(using = MonitorAppSequenceSerializer.class)
 public class MonitorAppSequence {
